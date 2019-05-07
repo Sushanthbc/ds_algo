@@ -25,7 +25,7 @@ class LinkedList
       @tail = node
     end
     @length = @length + 1
-  rescue StandardError => e
+    rescue StandardError => e
     puts e
   end
 
@@ -46,32 +46,32 @@ class LinkedList
       prev = current
       current = current.next
     end
-   end
+  end
 
   def search_data(data)
-  	raise "We cannot delete empty linked list" if @head == nil
-  	current = @head
- 	while current
-		return "element exists" if current.data == data
-  	end
-  	"can't find data in linked list"
+    raise "We cannot delete empty linked list" if @head == nil
+    current = @head
+    while current
+      return "element exists" if current.data == data
+    end
+    "can't find data in linked list"
   end
 
 end
 
 class DisplayLinkedList
-	
-	def initialize(node)
-		@node = node
-	end
-	
-	def output
-		res = ""
-		while !@node.next.nil?
-			res += @node.data.to_s + "-->"
-			@node = @node.next
-		end
-		res+@node.data.to_s
-	end
+
+  def initialize(node)
+  @node = node
+    end
+
+  def output
+    res = ""
+    while !@node.next.nil?
+      res += @node.data.to_s + "-->"
+      @node = @node.next
+    end
+    res+@node.data.to_s
+  end
 
 end
