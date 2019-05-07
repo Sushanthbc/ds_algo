@@ -46,14 +46,15 @@ class LinkedList
       prev = current
       current = current.next
     end
+  end
 
-    def search_data(data)
-      raise "We cannot delete empty linked list" if @head == nil
-      current = @head
-      while current
-        return "element exists" if current.data == data
-      end
-      "can't find data in linked list"
+  def search_data(data)
+    raise "We cannot delete empty linked list" if @head == nil
+    current = @head
+    while current
+      return data if current.data == data
+      current = current.next
     end
+    "can't find data in linked list"
   end
 end
