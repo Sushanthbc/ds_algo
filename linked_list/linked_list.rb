@@ -62,8 +62,8 @@ end
 class DisplayLinkedList
 
   def initialize(node)
-  @node = node
-    end
+    @node = node
+  end
 
   def output
     res = ""
