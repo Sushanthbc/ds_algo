@@ -26,4 +26,12 @@ class TestStacks < Test::Unit::TestCase
     assert_equal(stack.peek, 30)
   end
 
+  def test_check_for_limit
+    #TODO: give user flexibity to add how list it should grow
+  end
+
+  def test_pop_empty_list
+    stack = Stack.new
+    stack.pop
+  end
 end
