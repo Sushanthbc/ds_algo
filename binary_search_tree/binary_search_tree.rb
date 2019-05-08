@@ -1,4 +1,5 @@
 class TreeNode
+  attr_accessor :data, :right, :left
   def initialize(data)
     @data =  data
     @right = nil
@@ -10,10 +11,21 @@ class TreeError < StandardError
 end
 
 class BinarySearchTree
-  def add_items(arr)
-    return "list is empty" unless arr.empty?
-    arr.each do |val|
-      
+  attr_accessor :root
+  def initialize
+    @root = nil
+  end
+
+  def add_items(data, current)
+    current = @root
+    if current.nil || current.right == nil || current.left == nil
+      current = TreeNode.new(data)
+      return data
+    end
+    if current.data > data
+      add_items(data, current.right)
+    else
+      add_items(data, current.left)
     end
   end
 end
