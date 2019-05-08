@@ -49,17 +49,3 @@ class Stack
   end
 
 end
-
-
-stack = Stack.new
-
-stack.push(10)
-
-
-
-
-
-
-# Queues
-
-# can be built using arrays or linked list
