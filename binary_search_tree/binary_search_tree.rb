@@ -21,16 +21,16 @@ class BinarySearchTree
       current = TreeNode.new(data)
       @root = current if @root.nil?
       if side == "left" && prev != nil
-        prev.right = current
-      elsif side == "right" && prev != nil
         prev.left = current
+      elsif side == "right" && prev != nil
+        prev.right = current
       end
       return data
     end
     if current.data < data
-      add_items(data, current.right, current, "left")
+      add_items(data, current.right, current, "right")
     else
-      add_items(data, current.left, current, "right")
+      add_items(data, current.left, current, "left")
     end
   end
 end
