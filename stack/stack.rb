@@ -1,4 +1,5 @@
   class Stack
+    attr_accessor :top
     def initialize(size)
       @size = size
       @store = Array.new(@size)
@@ -9,9 +10,9 @@
       if full?
         raise "overflow error"
       else
+        @top += 1
         @store[@top] = element
       end
-      @top += 1
     end
 
     def pop
@@ -29,23 +30,27 @@
       if empty?
         raise "underflow error"
       else
+        deletion_index = nil
         @store.each_with_index do |ele, idx|
           if ele == element
-            popped = @store[idx]
-            @store[idx] = nil
-            popped
+            deletion_index = idx
+            break
           end
         end
+        (@top - deletion_index + 1).times do |i|
+          pop
+        end
+        return element
       end
     end
 
-
     private
-      def empty?
-        @top == -1
-      end
 
-      def full?
-        @top == (@size  - 1)
-      end
+    def empty?
+      @top == -1
+    end
+
+    def full?
+      @top == (@size  - 1)
+    end
   end
