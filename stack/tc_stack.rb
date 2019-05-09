@@ -35,4 +35,13 @@ class TestStack < Test::Unit::TestCase
     end
   end
 
+  def test_remove_selected_item
+    size= Stack.new(3)
+    item = size.push(6)
+    item = size.push(4)
+    item = size.push(5)
+    size.remove_element(4)
+    assert_equal(2,item)
+  end
+
 end
