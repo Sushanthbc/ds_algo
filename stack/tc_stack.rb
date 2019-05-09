@@ -44,4 +44,12 @@ class TestStack < Test::Unit::TestCase
     assert_equal(2,item)
   end
 
+  def test_selective_removing_leaving_behind
+    items = Stack.new(4)
+    [10, 20, 30, 40].each {|x| items.push(x)}
+    items.remove_element(20)
+    # we don't have top attr_accessor
+    assert_equal(items.top, 0)
+  end
+
 end
