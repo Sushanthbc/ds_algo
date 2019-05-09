@@ -33,4 +33,7 @@ class BinarySearchTree
       add_items(data, current.left, current, "left")
     end
   end
+
+  def search_item(data, current)
+  end
 end
