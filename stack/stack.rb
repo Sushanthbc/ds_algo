@@ -7,27 +7,21 @@
     end
 
     def push(element)
-      if full?
-        raise "overflow error"
-      else
+        return "overflow error" if is_full?
         @top += 1
         @store[@top] = element
-      end
     end
 
     def pop
-      if empty? or @store.nil?
-        raise "underflow error"
-      else
+        return "underflow error"  if is_empty? or @store.nil?
         popped = @store[@top]
         @store[@top] = nil
         @top = @top.pred
         popped
-      end
     end
 
     def remove_element(element)
-      raise "underflow error" if empty?
+      return "underflow error" if is_empty?
       until(@top == -1)
         if @store[@top] == element
           pop
@@ -39,11 +33,11 @@
 
     private
 
-    def empty?
+    def is_empty?
       @top == -1
     end
 
-    def full?
+    def is_full?
       @top == (@size  - 1)
     end
   end
