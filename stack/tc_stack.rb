@@ -52,4 +52,9 @@ class TestStack < Test::Unit::TestCase
     assert_equal(items.top, 0)
   end
 
+  def test_empty_pop
+    items = Stack.new(2)
+    items.remove_element(10)
+  end
+
 end
