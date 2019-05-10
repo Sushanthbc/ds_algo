@@ -12,7 +12,6 @@ class Node
 
 end
 
-
 class Stack
   attr_accessor :top, :bottom, :length
 
@@ -24,31 +23,35 @@ class Stack
   end
 
   def peek
-    @top.val
+    @top.val unless @length == 0
   end
 
   def push(val)
     return "Stack Limit Reached" if @length == @limit
+    stack = Node.new(val)
     if @bottom.nil?
-      stack = Node.new(val)
       @top = stack
       @bottom = stack
     else
       temp_top = @top
-      @top = Node.new(val)
+      @top = stack
       @top.next = temp_top
     end
     @length += 1
   end
 
   def pop
-    return "Stack Empty" if length == 0
+    return "Stack Empty" if @length == 0
     unless @top.val.nil?
       @top = @top.next
       @length -= 1
     end
 
-    @bottom = nil if length == 0
+    @bottom = nil if @length == 0
   end
 
 end
+
+
+stack = Stack.new(10)
+stack.peek
