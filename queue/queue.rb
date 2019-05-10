@@ -11,7 +11,7 @@ class Queue
     if @queue.empty?
       @rear = @front = 0
     elsif @size == @rear
-      raise "Cann't insert element because Queue is full."
+      raise "Can't insert element because Queue is full."
     else
       @rear += 1
     end
