@@ -7,7 +7,8 @@ class TestStack < Test::Unit::TestCase
     size= Stack.new(2)
     item = size.push(6)
     item = size.push(7)
-    assert_equal(1,item)
+    p size
+    assert_equal(7, item)
   end
 
   def test_check_overflow
@@ -23,7 +24,7 @@ class TestStack < Test::Unit::TestCase
     item = size.push(6)
     item = size.push(7)
     size.pop
-    assert_equal(1,item)
+    assert_equal(7,item)
   end
 
   def test_check_underflow
@@ -41,7 +42,7 @@ class TestStack < Test::Unit::TestCase
     item = size.push(4)
     item = size.push(5)
     size.remove_element(4)
-    assert_equal(2,item)
+    assert_equal(5,item)
   end
 
   def test_selective_removing_leaving_behind

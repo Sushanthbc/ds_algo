@@ -27,20 +27,13 @@
     end
 
     def remove_element(element)
-      if empty?
-        raise "underflow error"
-      else
-        deletion_index = nil
-        @store.each_with_index do |ele, idx|
-          if ele == element
-            deletion_index = idx
-            break
-          end
-        end
-        (@top - deletion_index + 1).times do |i|
+      raise "underflow error" if empty?
+      until(@top == -1)
+        if @store[@top] == element
           pop
+          break
         end
-        return element
+        pop
       end
     end
 
