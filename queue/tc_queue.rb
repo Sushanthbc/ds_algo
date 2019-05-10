@@ -17,6 +17,20 @@ class TestQueue < Test::Unit::TestCase
     assert_equal([], que.queue)
   end
 
+  def test_check_empty_dequeue
+    queue = Queue.new(3)
+    assert_equal("Queue is empty", queue.dequeue_item)
+  end
+
+  def test_get_front_element
+    # write a element to access first
+  end
+
+  def test_clear_all
+    # test to clear all
+  end
+
+
   def test_search_item
     queue = Queue.new(10)
     array_list = [2,3,4,51,1,34]
