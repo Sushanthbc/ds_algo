@@ -11,7 +11,7 @@ class Queue
     if @queue.empty?
       @rear = @front = 0
     elsif @size == @rear
-      raise "Can't insert element because Queue is full."
+      return "Can't insert element because Queue is full."
     else
       @rear += 1
     end
@@ -20,7 +20,7 @@ class Queue
 
   def dequeue_item
     if @queue.empty?
-      raise "Queue is empty"
+      return "Queue is empty"
     else
       (0..(@rear-1)).each do |i|
         @queue[i] = @queue[i+1]
@@ -33,7 +33,7 @@ class Queue
 
   def search_item(item)
     if @queue.empty?
-      raise "Queue is empty"
+      return "Queue is empty"
     else
       if @queue.include? item
         return true
