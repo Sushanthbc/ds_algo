@@ -13,7 +13,7 @@ class TestQueue < Test::Unit::TestCase
   def test_remove_item
     que = Queue.new(10)
     que.enqueue_item(8)
-    que.dequeue_item(8)
+    que.dequeue_item
     assert_equal([], que.queue)
   end
 
@@ -37,8 +37,8 @@ class TestQueue < Test::Unit::TestCase
     array_list.each do |i|
       queue.enqueue_item(i)
     end
-    assert_includes(true, queue.search_item(4))
-    assert_includes(false, queue.search_item(10))
+    assert_equal(true, queue.search_item(4))
+    assert_equal(false, queue.search_item(10))
   end
 
 end
