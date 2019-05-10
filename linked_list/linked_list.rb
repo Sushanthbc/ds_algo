@@ -35,8 +35,7 @@ class LinkedList
     while current
       if current.data == data
         if current.next != nil
-          prev = current
-          current = current.next
+          prev.next = current.next
         else
           prev.next = nil
         end
