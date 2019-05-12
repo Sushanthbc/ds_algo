@@ -16,7 +16,8 @@ class BinarySearchTree
     @root = nil
   end
 
-  def add_items(data, current, prev=nil, side=nil)
+  def add_items(data, current=root, prev=nil, side=nil)
+    return "Duplicates are not allowed" if current&.data == data
     if current.nil?
       current = TreeNode.new(data)
       @root = current if @root.nil?
@@ -34,6 +35,13 @@ class BinarySearchTree
     end
   end
 
-  def search_item(data, current)
+  def search_item(data, current=root)
+    return "tree is empty" if current.nil?
+    return data if (current.data == data)
+    if (current.data > data)
+      search_item(data, current.left)
+    else
+      search_item(data, current.right)
+    end
   end
 end
