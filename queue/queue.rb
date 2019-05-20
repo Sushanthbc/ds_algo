@@ -1,4 +1,5 @@
 class Queue
+  
   attr_accessor :front, :rear, :queue, :size
 
   def initialize(size)
