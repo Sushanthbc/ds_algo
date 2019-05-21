@@ -21,7 +21,7 @@ class TestQueues < Test::Unit::TestCase
     queue = Queue.new(2)
     queue.enqueue(10)
     queue.enqueue(20)
-    assert_equal(queue.enqueue(30), "Stack limit reached")
+    assert_equal(queue.enqueue(30), "Queue limit reached")
   end
 
   def test_peek

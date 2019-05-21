@@ -19,7 +19,6 @@ class Queue
   end
 
   def enqueue(val)
-    return "Stack limit reached" if @length == @limit
     queue = Node.new(val)
     if @start.nil?
       @start = queue
@@ -36,7 +35,6 @@ class Queue
       @start = @start.next
       @length -= 1
     end
-
     @end = nil if @length == 0
   end
 
@@ -45,10 +43,3 @@ class Queue
   end
 
 end
-
-
-queue = Queue.new(2)
-queue.enqueue(10)
-
-
-queue.dequeue
