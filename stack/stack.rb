@@ -1,4 +1,5 @@
   class Stack
+    #TODO: More naming
     attr_accessor :top
     def initialize(size)
       @size = size
